@@ -1,0 +1,19 @@
+version: '2.4'
+services:
+  rpyc:
+    build: .
+    ports:
+      - 5050:8000
+    volumes:
+      - .:/app
+    networks:
+      - backend
+    tty: true
+networks:
+  backend:
+    driver: bridge
+#    ipam:
+#      driver: default
+#      config:
+#        - subnet: 172.16.238.0/24
+#          geteway: 172.16.238.1
